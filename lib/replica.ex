@@ -7,8 +7,8 @@ defmodule Replica do
   end
 
   defp next(leaders, state, slot_in, slot_out, requests, proposals, decisions) do
-    receive do
-      {:request, }
-    end
+    # receive do
+    #   {:request, }
+    # end
   end
 end
