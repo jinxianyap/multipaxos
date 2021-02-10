@@ -15,19 +15,19 @@ defmodule Replica do
     window = 3
     if slot_in < slot_out + window and length(requests) > 0 do
       c = Enum.at(requests, Util.random(length(requests)) - 1)
+      IO.puts "leaders: #{inspect leaders}"
+      
+      reconfig_req = Enum.find(decisions, fn{s_in, {_, _, op}} -> s_in == slot_in - window && isreconfig(op) end)
+      new_leaders = 
+        if (reconfig_req != nil) do
+          {_, _, {_, new_ls}} = c
+          new_ls
+        else
+          leaders
+        end
 
-      new_leaders = fn ->
-        Enum.find(decisions, fn {s_in, c} ->
-          # c is of the form {cid, sent_index, {:RECONFIG, new_leaders}}
-          {_, _, op} = c
-          if s_in == slot_in - window and isreconfig(op) do
-            {_, ls} = op
-            ls
-          else
-            leaders
-          end
-        end)
-      end
+       IO.puts "new leaders: #{inspect new_leaders}"
+      
 
       if Enum.find(decisions, fn {s_in, _c} -> s_in == slot_in end) == nil do
         new_requests = List.delete(requests, c)
@@ -40,13 +40,14 @@ defmodule Replica do
         propose(new_leaders, slot_in + 1, slot_out, requests, proposals, decisions)
       end
     else
-      {leaders, slot_in, requests, proposals}
+      {slot_in, requests, proposals}
     end
   end
 
-  defp perform(database, slot_out, decisions, _request = {client, cid, op}) do
-    if Enum.find(decisions, fn {s, _c} -> s < slot_out end) == nil and !isreconfig(op) do
-      send database, op
+  defp perform(database, slot_out, decisions, _command = {client, cid, transactions}) do
+    # reconfigs ignored for now
+    if Enum.find(decisions, fn {s, _c} -> s < slot_out end) == nil do
+      send database, transactions
       # how to get response from database?
       send client, {:CLIENT_REPLY, cid, true}
       slot_out + 1
@@ -78,13 +79,13 @@ defmodule Replica do
   defp next(leaders, database, slot_in, slot_out, requests, proposals, decisions) do
     receive do
       {:CLIENT_REQUEST, c} ->
-        {new_leaders, new_slot_in, new_requests, new_proposals} = propose(leaders, slot_in, slot_out, requests++[c], proposals, decisions)
-        next(new_leaders, database, new_slot_in, slot_out, new_requests, new_proposals, decisions)
+        {new_slot_in, new_requests, new_proposals} = propose(leaders, slot_in, slot_out, requests++[c], proposals, decisions)
+        next(leaders, database, new_slot_in, slot_out, new_requests, new_proposals, decisions)
       {:DECISION, s, c} ->
         new_decisions = decisions ++ [{s, c}]
         {new_proposals, new_requests} = allocate(database, slot_out, requests, proposals, new_decisions)
-        {new_leaders, new_slot_in, new_requests_, new_proposals_} = propose(leaders, slot_in, slot_out, new_requests, new_proposals, new_decisions)
-        next(new_leaders, database, new_slot_in, slot_out, new_requests_, new_proposals_, new_decisions)
+        {new_slot_in, new_requests_, new_proposals_} = propose(leaders, slot_in, slot_out, new_requests, new_proposals, new_decisions)
+        next(leaders, database, new_slot_in, slot_out, new_requests_, new_proposals_, new_decisions)
     end
   end
 end
