@@ -30,6 +30,28 @@ def list_union(list, item) do
   if Enum.member?(list, item) do list else list ++ [item] end
 end
 
+def compare_pn({pn_1 , id_1}, {pn_2, id_2}) do
+  var = 
+  if pn_1 > pn_2 do
+    1
+  else
+    if pn_1 == pn_2 do
+      if id_1 < id_2 do
+        -1
+      else
+        if id_1 > id_2 do
+          1
+        else
+          0
+        end    
+      end
+    else # pn_1 < pn_2
+       -1
+    end
+  end
+  var
+end
+
 # --------------------------------------------------------------------------
 
 def node_exit do 	# nicely stop and exit the node
