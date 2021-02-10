@@ -9,7 +9,7 @@ def node_id(config, node_type, node_num \\ "") do
   %{
     node_type:     node_type,
     node_num:      node_num,
-    node_name:     "#{node_type}#{node_num}",
+    node_name:     "#{node_type}#{inspect node_num}",
     node_location: Util.node_string(),
   }
 end
