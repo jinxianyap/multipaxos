@@ -5,7 +5,7 @@
 defmodule Monitor do
 
 # setters for Monitor state variables
-def clock(state, v), do: 
+def clock(state, v), do:
   Map.put(state, :clock, v)
 
 def requests(state, i, v), do:
@@ -102,7 +102,7 @@ def next(config, state) do
   { :PRINT } ->
     clock  = state.clock + config.print_after
     state  = Monitor.clock(state, clock)
-
+    IO.puts "#{inspect(state.transactions |> Map.to_list)}"
     sorted = state.updates  |> Map.to_list |> List.keysort(0)
     IO.puts "time = #{clock}      db updates done = #{inspect sorted}"
     sorted = state.requests |> Map.to_list |> List.keysort(0)
@@ -136,5 +136,3 @@ def next(config, state) do
 end # next
 
 end # Monitor
-
-

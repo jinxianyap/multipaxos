@@ -7,8 +7,11 @@ defmodule Replica do
   end
 
   # assuming a reconfig request is in the form { :CLIENT_REQUEST, {cid, sent_index, {:RECONFIG, new_leaders}} }
-  defp isreconfig(_command = {name, _leaders}) do
-    name == :RECONFIG
+  defp isreconfig(command) do
+    case command do
+      {:RECONFIG, _} -> true
+      _otherwise -> false
+    end
   end
 
   defp propose(leaders, slot_in, slot_out, requests, proposals, decisions) do
@@ -43,6 +46,8 @@ defmodule Replica do
 
   defp perform(database, slot_out, decisions, _command = {client, cid, transactions}) do
     # reconfigs ignored for now
+    IO.puts inspect(transactions)
+
     if Enum.find(decisions, fn {s, _c} -> s < slot_out end) == nil do
       send database, {:EXECUTE, transactions}
       # how to get response from database?
@@ -61,6 +66,8 @@ defmodule Replica do
       if proposed != nil do
         {_, c_proposed} = proposed
         new_proposals = List.delete(proposals, proposed)
+        IO.puts "proposed: #{inspect(c_proposed)}"
+        IO.puts "decided: #{inspect(c_decided)}"
         new_requests = if c_decided != c_proposed do requests ++ [c_proposed] else requests end
         new_slot_out = perform(database, slot_out, decisions, c_decided)
         allocate(database, new_slot_out, new_requests, new_proposals, decisions)
@@ -69,7 +76,7 @@ defmodule Replica do
         allocate(database, new_slot_out, requests, proposals, decisions)
       end
     else
-      {proposals, requests}
+      {proposals, requests, slot_out}
     end
   end
 
@@ -80,10 +87,10 @@ defmodule Replica do
         {new_slot_in, new_requests, new_proposals} = propose(leaders, slot_in, slot_out, requests++[c], proposals, decisions)
         next(config, server_num, leaders, database, new_slot_in, slot_out, new_requests, new_proposals, decisions)
       {:DECISION, s, c} ->
-        new_decisions = decisions ++ [{s, c}]
-        {new_proposals, new_requests} = allocate(database, slot_out, requests, proposals, new_decisions)
+        new_decisions = Util.list_union(decisions, {s, c})
+        {new_proposals, new_requests, new_slot_out} = allocate(database, slot_out, requests, proposals, new_decisions)
         {new_slot_in, new_requests_, new_proposals_} = propose(leaders, slot_in, slot_out, new_requests, new_proposals, new_decisions)
-        next(config, server_num, leaders, database, new_slot_in, slot_out, new_requests_, new_proposals_, new_decisions)
+        next(config, server_num, leaders, database, new_slot_in, new_slot_out, new_requests_, new_proposals_, new_decisions)
     end
   end
 end
