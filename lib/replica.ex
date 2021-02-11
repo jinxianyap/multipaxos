@@ -15,7 +15,7 @@ defmodule Replica do
     window = 3
     if slot_in < slot_out + window and length(requests) > 0 do
       c = Enum.at(requests, Util.random(length(requests)) - 1)
-      IO.puts "leaders: #{inspect leaders}"
+      
       
       reconfig_req = Enum.find(decisions, fn{s_in, {_, _, op}} -> s_in == slot_in - window && isreconfig(op) end)
       new_leaders = 
@@ -25,8 +25,6 @@ defmodule Replica do
         else
           leaders
         end
-
-       IO.puts "new leaders: #{inspect new_leaders}"
       
 
       if Enum.find(decisions, fn {s_in, _c} -> s_in == slot_in end) == nil do
