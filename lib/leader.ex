@@ -6,7 +6,7 @@ def start(config) do
 
     receive do
         {:BIND, acceptors, replicas} ->
-            pn = {0, self()} 
+            pn = {0, self()}
             spawn(Scout, :start, [config, self(), acceptors, pn])
             next(config, false, Map.new(), acceptors, replicas, pn)
     end
@@ -35,7 +35,7 @@ end
 defp next(config, active, proposals, acceptors, replicas, pn) do
     receive do
         {:PROPOSE, slot, cmd} ->
-            new_proposals = 
+            new_proposals =
             if Map.get(proposals, slot) == nil do
                 updated_proposals = Map.put(proposals, slot, cmd)
                 if active do
@@ -60,9 +60,9 @@ defp next(config, active, proposals, acceptors, replicas, pn) do
                 spawn(Scout, :start, [config, self(), acceptors, pn_new])
                 next(config, active, proposals, acceptors, replicas, pn_new)
             else
-                next(config, active, proposals, acceptors, replicas, pn) 
+                next(config, active, proposals, acceptors, replicas, pn)
             end
-                    
-    end    
+
+    end
 end
 end

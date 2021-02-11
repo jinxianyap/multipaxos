@@ -28,4 +28,3 @@ defp next config, balances, db_seqnum do
 end # next
 
 end # Database
-
