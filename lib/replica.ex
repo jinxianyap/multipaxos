@@ -20,7 +20,7 @@ defmodule Replica do
       reconfig_req = Enum.find(decisions, fn{s_in, {_, _, op}} -> s_in == slot_in - window && isreconfig(op) end)
       new_leaders = 
         if (reconfig_req != nil) do
-          {_, _, {_, new_ls}} = c
+          {_, _, {_, new_ls}} = reconfig_req
           new_ls
         else
           leaders
