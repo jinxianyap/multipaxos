@@ -1,15 +1,16 @@
 defmodule Scout do
 
-  def start(config, leader, acceptors, pn) do
+  def start(config, leader, acceptors, pn, server_num) do
     config = Configuration.node_id(config, "Scout", pn)
     Debug.starting(config)
+    send config.monitor, {:SCOUT_SPAWNED, server_num}
     for each <- acceptors do
       send each, {:PREPARE, self(), pn}
     end
-    next(leader, acceptors, pn, acceptors, [])
+    next(config, leader, acceptors, pn, acceptors, [], server_num)
   end
 
-  defp next(leader, acceptors, pn, waitfor, p_values) do
+  defp next(config, leader, acceptors, pn, waitfor, p_values, server_num) do
     receive do
       {:PROMISE, a_id, pn_returned, p_accepted} ->
         if Util.compare_pn(pn, pn_returned) == 0 do
@@ -22,10 +23,11 @@ defmodule Scout do
             send leader, {:ADOPTED, pn, new_p_values}
             Process.exit(self(), :kill)
           else
-            next(leader, acceptors, pn, new_waitfor, new_p_values)
+            next(config, leader, acceptors, pn, new_waitfor, new_p_values, server_num)
           end
         else
           send leader, {:PREEMPTED, pn_returned}
+          send config.monitor, {:SCOUT_FINISHED, server_num}
           Process.exit(self(), :kill)
         end
     end

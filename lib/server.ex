@@ -10,7 +10,7 @@ def start config, server_num, multipaxos do
 
   database = spawn Database, :start, [config]
   replica  = spawn Replica,  :start, [config, server_num, database]
-  leader   = spawn Leader,   :start, [config]
+  leader   = spawn Leader,   :start, [config, server_num]
   acceptor = spawn Acceptor, :start, [config]
 
   send multipaxos, { :MODULES, replica, acceptor, leader }
