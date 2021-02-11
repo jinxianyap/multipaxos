@@ -2,7 +2,7 @@ defmodule Scout do
 
   def start(config, leader, acceptors, pn, server_num) do
     config = Configuration.node_id(config, "Scout", pn)
-    Debug.starting(config)
+    # Debug.starting(config)
     send config.monitor, {:SCOUT_SPAWNED, server_num}
     for each <- acceptors do
       send each, {:PREPARE, self(), pn}
@@ -15,7 +15,7 @@ defmodule Scout do
       {:PROMISE, a_id, pn_returned, p_accepted} ->
         if Util.compare_pn(pn, pn_returned) == 0 do
           # IO.puts("p_values: #{inspect p_values}")
-          # IO.puts("p_accepted: #{inspect p_accepted}") 
+          # IO.puts("p_accepted: #{inspect p_accepted}")
           new_p_values = List.flatten(Enum.map(p_accepted, fn accepted -> Util.list_union(p_values,accepted) end))
           # IO.puts "PROMISE new_p_values: #{inspect new_p_values}"
           new_waitfor = List.delete(waitfor, a_id)

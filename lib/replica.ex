@@ -46,9 +46,8 @@ defmodule Replica do
 
   defp perform(database, slot_out, decisions, _command = {client, cid, transactions}) do
     # reconfigs ignored for now
-    IO.puts inspect(transactions)
-
-    if Enum.find(decisions, fn {s, _c} -> s < slot_out end) == nil do
+    if Enum.find(decisions, fn {s, {client_, cid_, transactions_}} -> s < slot_out and client == client_ and cid == cid_ and transactions == transactions_ end) == nil do
+      # IO.puts inspect(transactions)
       send database, {:EXECUTE, transactions}
       # how to get response from database?
       send client, {:CLIENT_REPLY, cid, true}
@@ -66,8 +65,6 @@ defmodule Replica do
       if proposed != nil do
         {_, c_proposed} = proposed
         new_proposals = List.delete(proposals, proposed)
-        IO.puts "proposed: #{inspect(c_proposed)}"
-        IO.puts "decided: #{inspect(c_decided)}"
         new_requests = if c_decided != c_proposed do requests ++ [c_proposed] else requests end
         new_slot_out = perform(database, slot_out, decisions, c_decided)
         allocate(database, new_slot_out, new_requests, new_proposals, decisions)

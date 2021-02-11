@@ -19,7 +19,7 @@ end
 def params :default do
   %{
   max_requests: 5_000,		# max requests each client will make
-  client_sleep: 2,		# time (ms) to sleep before sending new request
+  client_sleep: 100,		# time (ms) to sleep before sending new request
   client_stop:  60_000,		# time (ms) to stop sending further requests
   client_send:	:broadcast,	# :round_robin, :quorum or :broadcast
 
