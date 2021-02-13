@@ -21,6 +21,7 @@ defmodule Scout do
           new_waitfor = List.delete(waitfor, a_id)
           if length(new_waitfor) < length(acceptors) / 2 do
             send leader, {:ADOPTED, pn, new_p_values}
+            send config.monitor, {:SCOUT_FINISHED, server_num}
             Process.exit(self(), :kill)
           else
             next(config, leader, acceptors, pn, new_waitfor, new_p_values, server_num)

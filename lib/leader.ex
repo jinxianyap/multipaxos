@@ -53,6 +53,7 @@ defp next(config, active, proposals, acceptors, replicas, pn, server_num) do
             active = true
             next(config, active, proposals, acceptors, replicas, pn, server_num)
         {:PREEMPTED, pn_accepted} ->
+        
             if Util.compare_pn(pn_accepted, pn) == 1 do
                 active = false
                 {curr_round, _} = pn
