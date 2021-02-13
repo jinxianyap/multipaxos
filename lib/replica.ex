@@ -3,41 +3,23 @@ defmodule Replica do
   def start(config, server_num, database) do
     config = Configuration.node_id(config, "Replica", server_num)
     Debug.starting(config)
-    receive do {:BIND, leaders} -> next(config, server_num, leaders, database, 1, 1, [], [], []) end
-  end
-
-  # assuming a reconfig request is in the form { :CLIENT_REQUEST, {cid, sent_index, {:RECONFIG, new_leaders}} }
-  defp isreconfig(command) do
-    case command do
-      {:RECONFIG, _} -> true
-      _otherwise -> false
-    end
+    receive do {:BIND, leaders} -> next(config, server_num, leaders, database, 1, 1, MapSet.new, Map.new, Map.new) end
   end
 
   defp propose(leaders, slot_in, slot_out, requests, proposals, decisions) do
     window = 3
-    if slot_in < slot_out + window and length(requests) > 0 do
-      c = Enum.at(requests, Util.random(length(requests)) - 1)
+    if slot_in < slot_out + window and MapSet.size(requests) > 0 do
+      c = Enum.at(requests, Util.random(MapSet.size(requests)) - 1)
 
-      reconfig_req = Enum.find(decisions, fn{s_in, {_, _, op}} -> s_in == slot_in - window && isreconfig(op) end)
-      new_leaders =
-        if (reconfig_req != nil) do
-          {_, _, {_, new_ls}} = reconfig_req
-          new_ls
-        else
-          leaders
-        end
-
-
-      if Enum.find(decisions, fn {s_in, _c} -> s_in == slot_in end) == nil do
-        new_requests = List.delete(requests, c)
-        new_proposals = Util.list_union(proposals, {slot_in, c})
-        for each <- new_leaders do
+      if Map.get(decisions, slot_in) == nil do
+        new_requests = MapSet.delete(requests, c)
+        new_proposals = Map.put(proposals, slot_in, c)
+        for each <- leaders do
           send each, {:PROPOSE, slot_in, c}
         end
-        propose(new_leaders, slot_in + 1, slot_out, new_requests, new_proposals, decisions)
+        propose(leaders, slot_in + 1, slot_out, new_requests, new_proposals, decisions)
       else
-        propose(new_leaders, slot_in + 1, slot_out, requests, proposals, decisions)
+        propose(leaders, slot_in + 1, slot_out, requests, proposals, decisions)
       end
     else
       {slot_in, requests, proposals}
@@ -45,11 +27,8 @@ defmodule Replica do
   end
 
   defp perform(database, slot_out, decisions, _command = {client, cid, transactions}) do
-    # reconfigs ignored for now
     if Enum.find(decisions, fn {s, {client_, cid_, transactions_}} -> s < slot_out and client == client_ and cid == cid_ and transactions == transactions_ end) == nil do
-      # IO.puts inspect(transactions)
       send database, {:EXECUTE, transactions}
-      # how to get response from database?
       send client, {:CLIENT_REPLY, cid, true}
       slot_out + 1
     else
@@ -58,14 +37,12 @@ defmodule Replica do
   end
 
   defp allocate(database, slot_out, requests, proposals, decisions) do
-    decided = Enum.find(decisions, fn {s, _c} -> s == slot_out end)
-    if decided != nil do
-      {_, c_decided} = decided
-      proposed = Enum.find(proposals, fn {s, _c} -> s == slot_out end)
-      if proposed != nil do
-        {_, c_proposed} = proposed
-        new_proposals = List.delete(proposals, proposed)
-        new_requests = if c_decided != c_proposed do requests ++ [c_proposed] else requests end
+    c_decided = Map.get(decisions, slot_out)
+    if c_decided != nil do
+      c_proposed = Map.get(proposals, slot_out)
+      if c_proposed != nil do
+        new_proposals = Map.delete(proposals, slot_out)
+        new_requests = if c_decided != c_proposed do MapSet.put(requests, c_proposed) else requests end
         new_slot_out = perform(database, slot_out, decisions, c_decided)
         allocate(database, new_slot_out, new_requests, new_proposals, decisions)
       else
@@ -81,10 +58,10 @@ defmodule Replica do
     receive do
       {:CLIENT_REQUEST, c} ->
         send config.monitor, { :CLIENT_REQUEST, server_num }
-        {new_slot_in, new_requests, new_proposals} = propose(leaders, slot_in, slot_out, requests++[c], proposals, decisions)
+        {new_slot_in, new_requests, new_proposals} = propose(leaders, slot_in, slot_out, MapSet.put(requests, c), proposals, decisions)
         next(config, server_num, leaders, database, new_slot_in, slot_out, new_requests, new_proposals, decisions)
       {:DECISION, s, c} ->
-        new_decisions = Util.list_union(decisions, {s, c})
+        new_decisions = Map.put(decisions, s, c)
         {new_proposals, new_requests, new_slot_out} = allocate(database, slot_out, requests, proposals, new_decisions)
         {new_slot_in, new_requests_, new_proposals_} = propose(leaders, slot_in, slot_out, new_requests, new_proposals, new_decisions)
         next(config, server_num, leaders, database, new_slot_in, new_slot_out, new_requests_, new_proposals_, new_decisions)
