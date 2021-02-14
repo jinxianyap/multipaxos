@@ -14,11 +14,11 @@ defmodule Replica do
       if Map.get(decisions, slot_in) == nil do
         new_requests = MapSet.delete(requests, c)
         new_proposals = Map.put(proposals, slot_in, c)
-        leader_to_send = Enum.random(leaders)
-        # for each <- leaders do
-        #   send each, {:PROPOSE, slot_in, c}
-        # end
-        send leader_to_send, {:PROPOSE, slot_in, c}
+        # leader_to_send = Enum.random(leaders)
+        for each <- leaders do
+          send each, {:PROPOSE, slot_in, c}
+        end
+        # send leader_to_send, {:PROPOSE, slot_in, c}
         propose(leaders, slot_in + 1, slot_out, new_requests, new_proposals, decisions)
       else
         propose(leaders, slot_in + 1, slot_out, requests, proposals, decisions)
