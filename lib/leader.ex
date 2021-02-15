@@ -64,7 +64,7 @@ defp next(config, active, proposals, acceptors, replicas, pn, server_num) do
             end
         {:RESPAWN} ->
             {curr_round, _} = pn
-            pn_new = {curr_round + 1, self()}
+            pn_new = {curr_round + 1, server_num}
             spawn(Scout, :start, [config, self(), acceptors, pn_new, server_num])
             next(config, active, proposals, acceptors, replicas, pn_new, server_num)
     end
