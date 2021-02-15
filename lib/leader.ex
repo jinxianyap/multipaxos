@@ -17,7 +17,7 @@ defp get_max_pn_for_each_slot(pvals) do
     # IO.puts "all_pvals: #{inspect pvals}"
     for pval <- pvals do
         # IO.puts "pval: #{inspect pval}"
-        {pn, slot_no, cmd} = pval
+        {pn, slot_no, _cmd} = pval
         if Map.has_key?(slot_to_pn, slot_no) do
             {curr_highest_pn, _, _} = Map.get(slot_to_pn, slot_no)
             if pn > curr_highest_pn do
@@ -53,21 +53,20 @@ defp next(config, active, proposals, acceptors, replicas, pn, server_num) do
             active = true
             next(config, active, proposals, acceptors, replicas, pn, server_num)
         {:PREEMPTED, pn_accepted} ->
-           
             if Util.compare_pn(pn_accepted, pn) == 1 do
                 active = false
-                {curr_round, _} = pn
-                {seq_num_accepted, _} = pn_accepted
-                pn_new = {curr_round + 1, server_num}
-                Process.send_after(self(), {:TIMEOUT, pn_new}, (seq_num_accepted - curr_round) * 100)
+                {n_a, _} = pn_accepted
+                {n, _} = pn
+                Process.send_after(self(), {:RESPAWN}, min(abs(n_a-n) * 2, 1000))
                 next(config, active, proposals, acceptors, replicas, pn, server_num)
             else
                 next(config, active, proposals, acceptors, replicas, pn, server_num)
             end
-        {:TIMEOUT, pn_new} ->
+        {:RESPAWN} ->
+            {curr_round, _} = pn
+            pn_new = {curr_round + 1, self()}
             spawn(Scout, :start, [config, self(), acceptors, pn_new, server_num])
-            next(config, active, proposals, acceptors, replicas, pn_new, server_num) 
-
+            next(config, active, proposals, acceptors, replicas, pn_new, server_num)
     end
 end
 end
