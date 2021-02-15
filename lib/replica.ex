@@ -3,16 +3,16 @@ defmodule Replica do
   def start(config, server_num, database) do
     config = Configuration.node_id(config, "Replica", server_num)
     Debug.starting(config)
-    receive do {:BIND, leaders} -> next(config, server_num, leaders, database, 1, 1, [], Map.new, Map.new) end
+    receive do {:BIND, leaders} -> next(config, server_num, leaders, database, 1, 1, MapSet.new, Map.new, Map.new) end
   end
 
   defp propose(leaders, slot_in, slot_out, requests, proposals, decisions) do
     window = 3
-    if slot_in < slot_out + window and length(requests) > 0 do
+    if slot_in < slot_out + window and MapSet.size(requests) > 0 do
       c = Enum.random(requests)
 
       if Map.get(decisions, slot_in) == nil do
-        new_requests = List.delete(requests, c)
+        new_requests = MapSet.delete(requests, c)
         new_proposals = Map.put(proposals, slot_in, c)
         # leader_to_send = Enum.random(leaders)
         for each <- leaders do
@@ -44,7 +44,7 @@ defmodule Replica do
       c_proposed = Map.get(proposals, slot_out)
       if c_proposed != nil do
         new_proposals = Map.delete(proposals, slot_out)
-        new_requests = if c_decided != c_proposed do requests ++ [c_proposed] else requests end
+        new_requests = if c_decided != c_proposed do MapSet.put(requests, c_proposed) else requests end
         new_slot_out = perform(database, slot_out, decisions, c_decided)
         allocate(database, new_slot_out, new_requests, new_proposals, decisions)
       else
@@ -60,7 +60,7 @@ defmodule Replica do
     receive do
       {:CLIENT_REQUEST, c} ->
         send config.monitor, { :CLIENT_REQUEST, server_num }
-        {new_slot_in, new_requests, new_proposals} = propose(leaders, slot_in, slot_out, requests ++ [c], proposals, decisions)
+        {new_slot_in, new_requests, new_proposals} = propose(leaders, slot_in, slot_out, MapSet.put(requests, c), proposals, decisions)
         next(config, server_num, leaders, database, new_slot_in, slot_out, new_requests, new_proposals, decisions)
       {:DECISION, s, c} ->
         new_decisions = Map.put(decisions, s, c)
