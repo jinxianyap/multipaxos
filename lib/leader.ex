@@ -6,7 +6,7 @@ def start(config, server_num) do
 
     receive do
         {:BIND, acceptors, replicas} ->
-            pn = {0, self()}
+            pn = {0, server_num}
             spawn(Scout, :start, [config, self(), acceptors, pn, server_num])
             next(config, false, Map.new(), acceptors, replicas, pn, server_num)
     end
@@ -53,16 +53,20 @@ defp next(config, active, proposals, acceptors, replicas, pn, server_num) do
             active = true
             next(config, active, proposals, acceptors, replicas, pn, server_num)
         {:PREEMPTED, pn_accepted} ->
-        
+           
             if Util.compare_pn(pn_accepted, pn) == 1 do
                 active = false
                 {curr_round, _} = pn
-                pn_new = {curr_round + 1, self()}
-                spawn(Scout, :start, [config, self(), acceptors, pn_new, server_num])
-                next(config, active, proposals, acceptors, replicas, pn_new, server_num)
+                {seq_num_accepted, _} = pn_accepted
+                pn_new = {curr_round + 1, server_num}
+                Process.send_after(self(), {:TIMEOUT, pn_new}, (seq_num_accepted - curr_round) * 100)
+                next(config, active, proposals, acceptors, replicas, pn, server_num)
             else
                 next(config, active, proposals, acceptors, replicas, pn, server_num)
             end
+        {:TIMEOUT, pn_new} ->
+            spawn(Scout, :start, [config, self(), acceptors, pn_new, server_num])
+            next(config, active, proposals, acceptors, replicas, pn_new, server_num) 
 
     end
 end
