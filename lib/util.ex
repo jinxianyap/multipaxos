@@ -30,14 +30,13 @@ def list_union(list, item) do
   if Enum.member?(list, item) do list else list ++ [item] end
 end
 
-@spec compare_pn({any, any}, {any, any}) :: -1 | 0 | 1
 def compare_pn({pn_1 , _id_1}, {pn_2, _id_2}) do
   var =
   if pn_1 > pn_2 do
     1
   else
     if pn_1 == pn_2 do
-     Enum.random([-1,1])
+     Enum.random([-1, 1])
     else # pn_1 < pn_2
        -1
     end
