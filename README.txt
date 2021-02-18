@@ -1,6 +1,7 @@
 
 # distributed algorithms, n.dulay, 29 jan 21
 # coursework, paxos made moderately complex
+# completed by Jin Xian Yap (jxy18) and Emily Haw (eh4418)
 
 # make options for Multipaxos
 
