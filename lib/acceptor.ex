@@ -1,4 +1,4 @@
-#acceptor module
+# Jin Xian Yap (jxy18) and Emily Haw (eh4418)
 
 defmodule Acceptor do
 
@@ -11,7 +11,7 @@ end
 defp next(highest_pn_so_far, accepted) do
     receive do
         {:PREPARE, scout, p_pn} ->
-            new_highest_pn_so_far = 
+            new_highest_pn_so_far =
             if Util.compare_pn(p_pn, highest_pn_so_far) == 1 do
                 p_pn
             else
@@ -21,7 +21,7 @@ defp next(highest_pn_so_far, accepted) do
             send scout, {:PROMISE, self(), new_highest_pn_so_far, accepted}
             next new_highest_pn_so_far, accepted
         {:ACCEPT, commander, {p_pn, _, _} = p_v} ->
-            new_accepted = 
+            new_accepted =
             if Util.compare_pn(highest_pn_so_far, p_pn) == 0 do
                 accepted ++ [p_v]
             else

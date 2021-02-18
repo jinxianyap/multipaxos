@@ -1,7 +1,7 @@
 
 # distributed algorithms, n.dulay 29 jan 2021
 # coursework, paxos made moderately complex
-
+# Jin Xian Yap (jxy18) and Emily Haw (eh4418)
 defmodule Configuration do
 
 def node_id(config, node_type, node_num \\ "") do

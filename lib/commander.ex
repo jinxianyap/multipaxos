@@ -1,4 +1,4 @@
-
+# Jin Xian Yap (jxy18) and Emily Haw (eh4418)
 defmodule Commander do
     def start(config, leader, acceptors, replicas, p_val, server_num) do
         config = Configuration.node_id(config, "Commander", self())

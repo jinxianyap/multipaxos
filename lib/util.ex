@@ -3,7 +3,7 @@
 # coursework, paxos made moderately complex
 #
 # various helper functions
-
+# Jin Xian Yap (jxy18) and Emily Haw (eh4418)
 defmodule Util do
 
 def lookup(name) do

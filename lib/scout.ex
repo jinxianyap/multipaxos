@@ -1,3 +1,4 @@
+# Jin Xian Yap (jxy18) and Emily Haw (eh4418)
 defmodule Scout do
 
   def start(config, leader, acceptors, pn, server_num) do

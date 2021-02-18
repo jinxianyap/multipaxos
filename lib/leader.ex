@@ -1,3 +1,4 @@
+# Jin Xian Yap (jxy18) and Emily Haw (eh4418)
 defmodule Leader do
 
 def start(config, server_num) do

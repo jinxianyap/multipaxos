@@ -1,7 +1,7 @@
 
 # distributed algorithms, n.dulay 29 jan 2021
 # coursework, paxos made moderately complex
-
+# Jin Xian Yap (jxy18) and Emily Haw (eh4418)
 defmodule Multipaxos do
 
 def start do
@@ -43,4 +43,3 @@ defp start(:cluster_start, config) do
 end # start
 
 end # Multipaxos
-
