@@ -102,7 +102,6 @@ def next(config, state) do
   { :PRINT } ->
     clock  = state.clock + config.print_after
     state  = Monitor.clock(state, clock)
-    IO.puts "#{inspect(state.transactions |> Map.to_list)}"
     sorted = state.updates  |> Map.to_list |> List.keysort(0)
     IO.puts "time = #{clock}      db updates done = #{inspect sorted}"
     sorted = state.requests |> Map.to_list |> List.keysort(0)
