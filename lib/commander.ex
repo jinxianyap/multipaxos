@@ -16,7 +16,7 @@ defmodule Commander do
         {pn, s, cmd} = p_val
         receive do
             {:ACCEPTED, acceptor, pn_accepted} ->
-                if pn_accepted == pn do
+                if Util.compare_pn(pn_accepted, pn) == 0 do
                     waitfor = List.delete(waitfor, acceptor)
                     if length(waitfor) < length(acceptors) / 2 do
                         for r <- replicas do
