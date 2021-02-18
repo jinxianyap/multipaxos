@@ -1,171 +1,159 @@
---> Starting Multipaxos"" at multipaxos_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Server2 at server2_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Server1 at server1_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Server3 at server3_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Leader2 at server2_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Leader3 at server3_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Replica2 at server2_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Replica3 at server3_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Leader1 at server1_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Replica1 at server1_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Acceptor#PID<0.141.0> at server3_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Acceptor#PID<0.141.0> at server2_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Acceptor#PID<0.141.0> at server1_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Server4 at server4_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Leader4 at server4_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Replica4 at server4_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Server5 at server5_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Acceptor#PID<0.141.0> at server4_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Leader5 at server5_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Replica5 at server5_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Acceptor#PID<0.141.0> at server5_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Client1 at client1_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Client4 at client4_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Client2 at client2_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Client3 at client3_20_eh4418@127.0.0.1 (146.169.52.168)
---> Starting Client5 at client5_20_eh4418@127.0.0.1 (146.169.52.168)
-[{1, %{amount: 263, from: 86, to: 63}}, {2, %{amount: 378, from: 48, to: 13}}, {3, %{amount: 110, from: 38, to: 26}}, {4, %{amount: 224, from: 27, to: 82}}, {5, %{amount: 155, from: 81, to: 30}}, {6, %{amount: 445, from: 61, to: 74}}, {7, %{amount: 721, from: 88, to: 20}}, {8, %{amount: 370, from: 67, to: 10}}, {9, %{amount: 315, from: 98, to: 18}}, {10, %{amount: 405, from: 38, to: 34}}, {11, %{amount: 414, from: 15, to: 65}}]
-time = 1000      db updates done = [{1, 11}, {2, 11}, {3, 11}, {4, 11}, {5, 11}]
-time = 1000 client requests seen = [{1, 41}, {2, 41}, {3, 41}, {4, 41}, {5, 41}]
-time = 1000           total seen = 205 max lag = 194
-time = 1000            scouts up = [{1, 32}, {2, 19}, {3, 61}, {4, 26}, {5, 65}]
-time = 1000          scouts down = [{1, 32}, {2, 19}, {3, 61}, {4, 26}, {5, 65}]
-time = 1000        commanders up = [{1, 7}, {2, 4}, {3, 104}, {4, 27}, {5, 275}]
-time = 1000      commanders down = [{1, 7}, {2, 4}, {3, 104}, {4, 27}, {5, 275}]
+--> Starting Multipaxos"" at multipaxos_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Server1 at server1_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Leader1 at server1_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Replica1 at server1_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Server2 at server2_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Acceptor#PID<0.141.0> at server1_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Leader2 at server2_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Replica2 at server2_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Acceptor#PID<0.141.0> at server2_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Server3 at server3_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Leader3 at server3_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Replica3 at server3_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Acceptor#PID<0.141.0> at server3_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Server4 at server4_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Server5 at server5_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Replica4 at server4_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Leader4 at server4_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Leader5 at server5_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Replica5 at server5_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Acceptor#PID<0.141.0> at server4_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Acceptor#PID<0.141.0> at server5_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Client1 at client1_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Client2 at client2_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Client3 at client3_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Client4 at client4_33_jxy18@127.0.0.1 (146.169.52.170)
+--> Starting Client5 at client5_33_jxy18@127.0.0.1 (146.169.52.170)
+time = 1000      db updates done = [{1, 28}, {2, 28}, {3, 28}, {4, 28}, {5, 28}]
+time = 1000 client requests seen = [{1, 1207}, {2, 1350}, {3, 1357}, {4, 1357}, {5, 1357}]
+time = 1000           total seen = 6628 max lag = 6600
+time = 1000            scouts up = [{1, 283}, {2, 54}, {3, 19}, {4, 363}, {5, 6}]
+time = 1000          scouts down = [{1, 96}, {2, 54}, {3, 19}, {4, 296}, {5, 6}]
+time = 1000        commanders up = [{1, 357}, {2, 162}, {3, 6}, {4, 392}]
+time = 1000      commanders down = [{1, 357}, {2, 162}, {3, 6}, {4, 392}]
 
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 2000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 2000 client requests seen = [{1, 90}, {2, 90}, {3, 90}, {4, 90}, {5, 90}]
-time = 2000           total seen = 450 max lag = 384
-time = 2000            scouts up = [{1, 66}, {2, 30}, {3, 565}, {4, 40}, {5, 66}]
-time = 2000          scouts down = [{1, 65}, {2, 30}, {3, 125}, {4, 40}, {5, 65}]
-time = 2000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 2000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+time = 2000      db updates done = [{1, 28}, {2, 28}, {3, 28}, {4, 28}, {5, 28}]
+time = 2000 client requests seen = [{1, 2255}, {2, 2819}, {3, 2819}, {4, 1909}, {5, 2819}]
+time = 2000           total seen = 12621 max lag = 12593
+time = 2000            scouts up = [{1, 283}, {2, 60}, {3, 20}, {4, 363}, {5, 7}]
+time = 2000          scouts down = [{1, 127}, {2, 60}, {3, 20}, {4, 327}, {5, 7}]
+time = 2000        commanders up = [{1, 357}, {2, 162}, {3, 6}, {4, 392}]
+time = 2000      commanders down = [{1, 357}, {2, 162}, {3, 6}, {4, 392}]
 
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 3000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 3000 client requests seen = [{1, 140}, {2, 140}, {3, 138}, {4, 140}, {5, 140}]
-time = 3000           total seen = 698 max lag = 632
-time = 3000            scouts up = [{1, 66}, {2, 31}, {3, 565}, {4, 41}, {5, 66}]
-time = 3000          scouts down = [{1, 65}, {2, 31}, {3, 125}, {4, 41}, {5, 65}]
-time = 3000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 3000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+time = 3000      db updates done = [{1, 28}, {2, 28}, {3, 28}, {4, 28}, {5, 28}]
+time = 3000 client requests seen = [{1, 4008}, {2, 4232}, {3, 4232}, {4, 4220}, {5, 4232}]
+time = 3000           total seen = 20924 max lag = 20896
+time = 3000            scouts up = [{1, 283}, {2, 63}, {3, 22}, {4, 363}, {5, 9}]
+time = 3000          scouts down = [{1, 183}, {2, 63}, {3, 22}, {4, 360}, {5, 9}]
+time = 3000        commanders up = [{1, 357}, {2, 162}, {3, 6}, {4, 596}]
+time = 3000      commanders down = [{1, 357}, {2, 162}, {3, 6}, {4, 596}]
 
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 4000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 4000 client requests seen = [{1, 148}, {2, 189}, {3, 186}, {4, 189}, {5, 178}]
-time = 4000           total seen = 890 max lag = 824
-time = 4000            scouts up = [{1, 66}, {2, 32}, {3, 565}, {4, 42}, {5, 66}]
-time = 4000          scouts down = [{1, 65}, {2, 32}, {3, 125}, {4, 42}, {5, 65}]
-time = 4000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 4000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+time = 4000      db updates done = [{1, 28}, {2, 28}, {3, 28}, {4, 28}, {5, 28}]
+time = 4000 client requests seen = [{1, 5726}, {2, 5836}, {3, 5836}, {4, 5836}, {5, 5836}]
+time = 4000           total seen = 29070 max lag = 29042
+time = 4000            scouts up = [{1, 283}, {2, 69}, {3, 23}, {4, 363}, {5, 10}]
+time = 4000          scouts down = [{1, 238}, {2, 69}, {3, 23}, {4, 363}, {5, 10}]
+time = 4000        commanders up = [{1, 1071}, {2, 162}, {3, 6}, {4, 596}]
+time = 4000      commanders down = [{1, 1071}, {2, 162}, {3, 6}, {4, 596}]
 
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 5000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 5000 client requests seen = [{1, 148}, {2, 238}, {3, 236}, {4, 238}, {5, 178}]
-time = 5000           total seen = 1038 max lag = 972
-time = 5000            scouts up = [{1, 66}, {2, 33}, {3, 565}, {4, 43}, {5, 66}]
-time = 5000          scouts down = [{1, 65}, {2, 33}, {3, 125}, {4, 43}, {5, 65}]
-time = 5000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 5000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+time = 5000      db updates done = [{1, 28}, {2, 28}, {3, 28}, {4, 28}, {5, 28}]
+time = 5000 client requests seen = [{1, 7498}, {2, 7500}, {3, 7502}, {4, 7502}, {5, 7502}]
+time = 5000           total seen = 37504 max lag = 37476
+time = 5000            scouts up = [{1, 283}, {2, 75}, {3, 25}, {4, 363}, {5, 11}]
+time = 5000          scouts down = [{1, 283}, {2, 75}, {3, 25}, {4, 363}, {5, 11}]
+time = 5000        commanders up = [{1, 1071}, {2, 162}, {3, 6}, {4, 766}]
+time = 5000      commanders down = [{1, 1071}, {2, 162}, {3, 6}, {4, 766}]
 
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 6000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 6000 client requests seen = [{1, 148}, {2, 288}, {3, 286}, {4, 288}, {5, 178}]
-time = 6000           total seen = 1188 max lag = 1122
-time = 6000            scouts up = [{1, 66}, {2, 34}, {3, 565}, {4, 44}, {5, 66}]
-time = 6000          scouts down = [{1, 65}, {2, 34}, {3, 125}, {4, 44}, {5, 65}]
-time = 6000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 6000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+time = 6000      db updates done = [{1, 31}, {2, 31}, {3, 31}, {4, 31}, {5, 31}]
+time = 6000 client requests seen = [{1, 9141}, {2, 9162}, {3, 9127}, {4, 9153}, {5, 9141}]
+time = 6000           total seen = 45724 max lag = 45693
+time = 6000            scouts up = [{1, 283}, {2, 78}, {3, 26}, {4, 363}, {5, 13}]
+time = 6000          scouts down = [{1, 283}, {2, 78}, {3, 26}, {4, 363}, {5, 13}]
+time = 6000        commanders up = [{1, 1071}, {2, 162}, {3, 6}, {4, 2466}]
+time = 6000      commanders down = [{1, 1071}, {2, 162}, {3, 6}, {4, 2466}]
 
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 7000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 7000 client requests seen = [{1, 148}, {2, 337}, {3, 336}, {4, 337}, {5, 178}]
-time = 7000           total seen = 1336 max lag = 1270
-time = 7000            scouts up = [{1, 66}, {2, 35}, {3, 565}, {4, 45}, {5, 66}]
-time = 7000          scouts down = [{1, 65}, {2, 35}, {3, 126}, {4, 45}, {5, 65}]
-time = 7000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 7000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+time = 7000      db updates done = [{1, 603}, {2, 605}, {3, 602}, {4, 610}, {5, 603}]
+time = 7000 client requests seen = [{1, 10905}, {2, 10914}, {3, 10909}, {4, 10919}, {5, 10903}]
+time = 7000           total seen = 54550 max lag = 53948
+time = 7000            scouts up = [{1, 283}, {2, 84}, {3, 28}, {4, 363}, {5, 14}]
+time = 7000          scouts down = [{1, 283}, {2, 84}, {3, 28}, {4, 363}, {5, 14}]
+time = 7000        commanders up = [{1, 1071}, {2, 162}, {3, 6}, {4, 3265}]
+time = 7000      commanders down = [{1, 1071}, {2, 162}, {3, 6}, {4, 3262}]
 
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 8000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 8000 client requests seen = [{1, 148}, {2, 386}, {3, 365}, {4, 386}, {5, 178}]
-time = 8000           total seen = 1463 max lag = 1397
-time = 8000            scouts up = [{1, 66}, {2, 36}, {3, 565}, {4, 46}, {5, 66}]
-time = 8000          scouts down = [{1, 65}, {2, 36}, {3, 126}, {4, 46}, {5, 65}]
-time = 8000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 8000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+time = 8000      db updates done = [{1, 1259}, {2, 1261}, {3, 1261}, {4, 1260}, {5, 1261}]
+time = 8000 client requests seen = [{1, 12541}, {2, 12547}, {3, 12547}, {4, 12546}, {5, 12548}]
+time = 8000           total seen = 62729 max lag = 61470
+time = 8000            scouts up = [{1, 283}, {2, 90}, {3, 29}, {4, 363}, {5, 16}]
+time = 8000          scouts down = [{1, 283}, {2, 90}, {3, 29}, {4, 363}, {5, 16}]
+time = 8000        commanders up = [{1, 1071}, {2, 162}, {3, 6}, {4, 3942}]
+time = 8000      commanders down = [{1, 1071}, {2, 162}, {3, 6}, {4, 3942}]
 
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 9000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 9000 client requests seen = [{1, 148}, {2, 436}, {3, 429}, {4, 436}, {5, 178}]
-time = 9000           total seen = 1627 max lag = 1561
-time = 9000            scouts up = [{1, 66}, {2, 37}, {3, 565}, {4, 47}, {5, 66}]
-time = 9000          scouts down = [{1, 65}, {2, 37}, {3, 127}, {4, 47}, {5, 65}]
-time = 9000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 9000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+time = 9000      db updates done = [{1, 1689}, {2, 1708}, {3, 1722}, {4, 1719}, {5, 1723}]
+time = 9000 client requests seen = [{1, 14062}, {2, 14132}, {3, 14179}, {4, 14186}, {5, 14194}]
+time = 9000           total seen = 70753 max lag = 69064
+time = 9000            scouts up = [{1, 283}, {2, 96}, {3, 31}, {4, 363}, {5, 17}]
+time = 9000          scouts down = [{1, 283}, {2, 96}, {3, 31}, {4, 363}, {5, 17}]
+time = 9000        commanders up = [{1, 2159}, {2, 162}, {3, 6}, {4, 4441}]
+time = 9000      commanders down = [{1, 2159}, {2, 162}, {3, 6}, {4, 4441}]
 
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 10000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 10000 client requests seen = [{1, 148}, {2, 493}, {3, 475}, {4, 493}, {5, 178}]
-time = 10000           total seen = 1787 max lag = 1721
-time = 10000            scouts up = [{1, 66}, {2, 38}, {3, 565}, {4, 48}, {5, 66}]
-time = 10000          scouts down = [{1, 65}, {2, 38}, {3, 127}, {4, 48}, {5, 65}]
-time = 10000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 10000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+time = 10000      db updates done = [{1, 2161}, {2, 2159}, {3, 2168}, {4, 2173}, {5, 2173}]
+time = 10000 client requests seen = [{1, 15793}, {2, 15780}, {3, 15817}, {4, 15841}, {5, 15844}]
+time = 10000           total seen = 79075 max lag = 76916
+time = 10000            scouts up = [{1, 283}, {2, 99}, {3, 32}, {4, 363}, {5, 19}]
+time = 10000          scouts down = [{1, 283}, {2, 99}, {3, 32}, {4, 363}, {5, 19}]
+time = 10000        commanders up = [{1, 4505}, {2, 162}, {3, 6}, {4, 4937}]
+time = 10000      commanders down = [{1, 4505}, {2, 162}, {3, 6}, {4, 4937}]
 
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 11000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 11000 client requests seen = [{1, 148}, {2, 547}, {3, 517}, {4, 547}, {5, 178}]
-time = 11000           total seen = 1937 max lag = 1871
-time = 11000            scouts up = [{1, 66}, {2, 39}, {3, 565}, {4, 49}, {5, 66}]
-time = 11000          scouts down = [{1, 65}, {2, 39}, {3, 128}, {4, 49}, {5, 65}]
-time = 11000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 11000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+time = 11000      db updates done = [{1, 2576}, {2, 2581}, {3, 2583}, {4, 2592}, {5, 2583}]
+time = 11000 client requests seen = [{1, 17421}, {2, 17442}, {3, 17455}, {4, 17494}, {5, 17457}]
+time = 11000           total seen = 87269 max lag = 84693
+time = 11000            scouts up = [{1, 283}, {2, 105}, {3, 34}, {4, 363}, {5, 20}]
+time = 11000          scouts down = [{1, 283}, {2, 105}, {3, 34}, {4, 363}, {5, 20}]
+time = 11000        commanders up = [{1, 6511}, {2, 162}, {3, 6}, {4, 5390}]
+time = 11000      commanders down = [{1, 6511}, {2, 162}, {3, 6}, {4, 5390}]
 
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 12000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 12000 client requests seen = [{1, 148}, {2, 602}, {3, 599}, {4, 602}, {5, 178}]
-time = 12000           total seen = 2129 max lag = 2063
-time = 12000            scouts up = [{1, 66}, {2, 40}, {3, 565}, {4, 50}, {5, 66}]
-time = 12000          scouts down = [{1, 65}, {2, 40}, {3, 128}, {4, 50}, {5, 65}]
-time = 12000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 12000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+time = 12000      db updates done = [{1, 2856}, {2, 2872}, {3, 2870}, {4, 2863}, {5, 2864}]
+time = 12000 client requests seen = [{1, 19036}, {2, 19122}, {3, 19113}, {4, 19075}, {5, 19072}]
+time = 12000           total seen = 95418 max lag = 92562
+time = 12000            scouts up = [{1, 283}, {2, 111}, {3, 35}, {4, 363}, {5, 22}]
+time = 12000          scouts down = [{1, 283}, {2, 111}, {3, 35}, {4, 363}, {5, 22}]
+time = 12000        commanders up = [{1, 6987}, {2, 162}, {3, 6}, {4, 5719}]
+time = 12000      commanders down = [{1, 6987}, {2, 162}, {3, 6}, {4, 5719}]
 
-Exiting Node client3_20_eh4418@127.0.0.1 - maxtime 15000 reached
-Exiting Node client1_20_eh4418@127.0.0.1 - maxtime 15000 reached
-Exiting Node server2_20_eh4418@127.0.0.1 - maxtime 15000 reached
-Exiting Node client4_20_eh4418@127.0.0.1 - maxtime 15000 reached
-Exiting Node server4_20_eh4418@127.0.0.1 - maxtime 15000 reached
-Exiting Node client2_20_eh4418@127.0.0.1 - maxtime 15000 reached
-Exiting Node client5_20_eh4418@127.0.0.1 - maxtime 15000 reached
-Exiting Node server1_20_eh4418@127.0.0.1 - maxtime 15000 reached
-Exiting Node server3_20_eh4418@127.0.0.1 - maxtime 15000 reached
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 13000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 13000 client requests seen = [{1, 640}, {2, 642}, {3, 629}, {4, 642}, {5, 178}]
-time = 13000           total seen = 2731 max lag = 2665
-time = 13000            scouts up = [{1, 66}, {2, 41}, {3, 565}, {4, 51}, {5, 66}]
-time = 13000          scouts down = [{1, 66}, {2, 41}, {3, 128}, {4, 51}, {5, 65}]
-time = 13000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 13000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+Exiting Node server5_33_jxy18@127.0.0.1 - maxtime 15000 reached
+Exiting Node client4_33_jxy18@127.0.0.1 - maxtime 15000 reached
+Exiting Node client2_33_jxy18@127.0.0.1 - maxtime 15000 reached
+Exiting Node server4_33_jxy18@127.0.0.1 - maxtime 15000 reached
+Exiting Node server3_33_jxy18@127.0.0.1 - maxtime 15000 reached
+Exiting Node server2_33_jxy18@127.0.0.1 - maxtime 15000 reached
+Exiting Node server1_33_jxy18@127.0.0.1 - maxtime 15000 reached
+Exiting Node client3_33_jxy18@127.0.0.1 - maxtime 15000 reached
+Exiting Node client1_33_jxy18@127.0.0.1 - maxtime 15000 reached
+Exiting Node client5_33_jxy18@127.0.0.1 - maxtime 15000 reached
+time = 13000      db updates done = [{1, 3055}, {2, 3088}, {3, 3088}, {4, 3088}, {5, 3067}]
+time = 13000 client requests seen = [{1, 20245}, {2, 20748}, {3, 20748}, {4, 20748}, {5, 20242}]
+time = 13000           total seen = 102731 max lag = 99676
+time = 13000            scouts up = [{1, 1311}, {2, 117}, {3, 37}, {4, 363}, {5, 23}]
+time = 13000          scouts down = [{1, 369}, {2, 117}, {3, 36}, {4, 363}, {5, 23}]
+time = 13000        commanders up = [{1, 8990}, {2, 162}, {3, 6}, {4, 5964}]
+time = 13000      commanders down = [{1, 8990}, {2, 162}, {3, 6}, {4, 5961}]
 
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 14000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 14000 client requests seen = [{1, 676}, {2, 677}, {3, 644}, {4, 677}, {5, 178}]
-time = 14000           total seen = 2852 max lag = 2786
-time = 14000            scouts up = [{1, 66}, {2, 42}, {3, 565}, {4, 52}, {5, 66}]
-time = 14000          scouts down = [{1, 66}, {2, 42}, {3, 128}, {4, 52}, {5, 65}]
-time = 14000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 14000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+time = 14000      db updates done = [{1, 3088}, {2, 3088}, {3, 3088}, {4, 3088}, {5, 3088}]
+time = 14000 client requests seen = [{1, 22073}, {2, 21956}, {3, 22004}, {4, 21855}, {5, 21916}]
+time = 14000           total seen = 109804 max lag = 106716
+time = 14000            scouts up = [{1, 4907}, {2, 120}, {3, 37}, {4, 363}, {5, 24}]
+time = 14000          scouts down = [{1, 422}, {2, 117}, {3, 36}, {4, 363}, {5, 23}]
+time = 14000        commanders up = [{1, 8990}, {2, 162}, {3, 6}, {4, 5964}]
+time = 14000      commanders down = [{1, 8990}, {2, 162}, {3, 6}, {4, 5961}]
 
-Exiting Node server5_20_eh4418@127.0.0.1 - maxtime 15000 reached
-Exiting Node multipaxos_20_eh4418@127.0.0.1 - maxtime 15000 reached
-[{48, %{amount: 225, from: 12, to: 76}}, {62, %{amount: 217, from: 67, to: 53}}, {11, %{amount: 414, from: 15, to: 65}}, {39, %{amount: 824, from: 17, to: 80}}, {63, %{amount: 704, from: 18, to: 96}}, {34, %{amount: 942, from: 94, to: 6}}, {26, %{amount: 996, from: 65, to: 85}}, {52, %{amount: 678, from: 74, to: 98}}, {15, %{amount: 395, from: 97, to: 42}}, {64, %{amount: 543, from: 28, to: 32}}, {20, %{amount: 89, from: 29, to: 16}}, {50, %{amount: 87, from: 52, to: 90}}, {17, %{amount: 223, from: 63, to: 14}}, {25, %{amount: 337, from: 61, to: 76}}, {65, %{amount: 4, from: 43, to: 5}}, {13, %{amount: 957, from: 5, to: 26}}, {44, %{amount: 292, from: 24, to: 65}}, {8, %{amount: 370, from: 67, to: 10}}, {36, %{amount: 306, from: 26, to: 14}}, {7, %{amount: 721, from: 88, to: 20}}, {66, %{amount: 191, from: 84, to: 84}}, {1, %{amount: 263, from: 86, to: 63}}, {32, %{amount: 555, from: 85, to: 79}}, {37, %{amount: 664, from: 21, to: 48}}, {35, %{amount: 643, from: 66, to: 1}}, {3, %{amount: 110, from: 38, to: 26}}, {45, %{amount: 977, from: 20, to: 99}}, {55, %{amount: 399, from: 88, to: 22}}, {6, %{amount: 445, from: 61, to: 74}}, {2, %{amount: 378, from: 48, to: 13}}, {49, %{amount: 508, from: 4, to: 26}}, {41, %{amount: 899, from: 20, to: 85}}, {33, %{amount: 270, from: 39, to: 18}}, {42, %{amount: 913, from: 75, to: 91}}, {60, %{amount: 239, from: 10, to: 75}}, {43, %{amount: 81, from: 76, to: 52}}, {10, %{amount: 405, from: 38, to: 34}}, {9, %{amount: 315, from: 98, to: 18}}, {19, %{amount: 633, from: 16, to: 75}}, {56, %{amount: 354, from: 77, to: 36}}, {57, %{amount: 172, from: 33, to: 63}}, {51, %{amount: 898, from: 16, to: 15}}, {14, %{amount: 756, from: 21, to: 80}}, {5, %{amount: 155, from: 81, to: 30}}, {54, %{amount: 649, from: 6, to: 37}}, {18, %{amount: 965, from: 21, ...}}, {61, %{amount: 198, ...}}, {31, %{...}}, {22, ...}, {...}, ...]
-time = 15000      db updates done = [{1, 66}, {2, 66}, {3, 66}, {4, 66}, {5, 66}]
-time = 15000 client requests seen = [{1, 708}, {2, 708}, {3, 691}, {4, 708}, {5, 465}]
-time = 15000           total seen = 3280 max lag = 3214
-time = 15000            scouts up = [{1, 66}, {2, 43}, {3, 565}, {4, 53}, {5, 66}]
-time = 15000          scouts down = [{1, 66}, {2, 43}, {3, 128}, {4, 53}, {5, 66}]
-time = 15000        commanders up = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
-time = 15000      commanders down = [{1, 7}, {2, 4}, {3, 847}, {4, 27}, {5, 540}]
+Exiting Node multipaxos_33_jxy18@127.0.0.1 - maxtime 15000 reached
+time = 15000      db updates done = [{1, 3088}, {2, 3088}, {3, 3088}, {4, 3088}, {5, 3088}]
+time = 15000 client requests seen = [{1, 23052}, {2, 21956}, {3, 22004}, {4, 21855}, {5, 21916}]
+time = 15000           total seen = 110783 max lag = 107695
+time = 15000            scouts up = [{1, 4907}, {2, 120}, {3, 37}, {4, 363}, {5, 24}]
+time = 15000          scouts down = [{1, 472}, {2, 117}, {3, 36}, {4, 363}, {5, 23}]
+time = 15000        commanders up = [{1, 8990}, {2, 162}, {3, 6}, {4, 5964}]
+time = 15000      commanders down = [{1, 8990}, {2, 162}, {3, 6}, {4, 5961}]
+
+  Client 1 going to sleep, sent = 5000
+  Client 3 going to sleep, sent = 5000
